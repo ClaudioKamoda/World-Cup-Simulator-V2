@@ -1,11 +1,17 @@
+import { useState } from 'react'
 import { images } from '../imageImports.js'
+import '../css/Match.scss'
 
 export const Match = props => {
-	let isEditing = false
+	const [isEditing, setIsEditing] = useState(false)
 	let scoreA = 0
 	let scoreB = 0
 
-	const toggleEdit = () => {}
+	const toggleEdit = () => {
+		setIsEditing(prevState => {
+			return !prevState
+		})
+	}
 
 	return (
 		<div className="match">

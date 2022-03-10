@@ -1,0 +1,88 @@
+@import './app.scss';
+
+.match {
+	display: grid;
+	grid-template-rows: 25px 40px;
+	grid-template-columns: 40px 40px 30px 10px 30px 40px 40px;
+	grid-template-areas:
+		'stadium stadium stadium stadium stadium stadium stadium'
+		'flagA teamA scoreA cross scoreB teamB flagB';
+	column-gap: 5px;
+	background-color: white;
+	border-radius: 8px;
+	width: fit-content;
+	padding: 5px 15px;
+	font-size: 1.125rem;
+	position: relative;
+
+	form {
+		input[type='text'] {
+			width: 30px;
+			font-size: 1.125rem;
+			text-align: center;
+		}
+	}
+
+	&__topText {
+		grid-area: stadium;
+		place-self: center;
+		font-size: 1rem;
+	}
+
+	img {
+		width: 40px;
+	}
+
+	&__flagA {
+		grid-area: flagA;
+	}
+
+	&__teamA {
+		grid-area: teamA;
+		place-self: center;
+	}
+
+	&__scoreA {
+		grid-area: scoreA;
+		place-self: center;
+	}
+
+	&__cross {
+		grid-area: cross;
+		place-self: center;
+	}
+
+	&__scoreB {
+		grid-area: scoreB;
+		place-self: center;
+	}
+
+	&__teamB {
+		grid-area: teamB;
+		place-self: center;
+	}
+
+	&__flagB {
+		grid-area: flagB;
+	}
+
+	.edit {
+		position: absolute;
+		right: -15px;
+		top: 0;
+		background-color: $blue;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		transition: top 0.3s ease-in;
+		@include Flexbox();
+
+		&:hover {
+			top: -5px;
+		}
+
+		&.bg-green {
+			background-color: $green;
+		}
+	}
+}
