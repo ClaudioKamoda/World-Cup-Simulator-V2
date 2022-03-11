@@ -1,15 +1,21 @@
 import { useState } from 'react'
 import { images } from '../imageImports.js'
 import '../css/Match.scss'
+import FeatherIcon from 'feather-icons-react'
 
 export const Match = props => {
 	const [isEditing, setIsEditing] = useState(false)
+	const [buttonIcon, setButtonIcon] = useState('edit-3')
 	let scoreA = 0
 	let scoreB = 0
 
 	const toggleEdit = () => {
 		setIsEditing(prevState => {
 			return !prevState
+		})
+		setButtonIcon(prevState => {
+			if (prevState === 'edit-3') return 'check'
+			else return 'edit-3'
 		})
 	}
 
@@ -46,7 +52,12 @@ export const Match = props => {
 				src={images[props.matchData.team_B]}
 				alt="Flag"
 			/>
-			<div className="edit editButtonClass" onClick={toggleEdit}></div>
+			<div
+				className={`edit${isEditing === true ? ' bg-green' : ''}`}
+				onClick={toggleEdit}
+			>
+				<FeatherIcon icon={buttonIcon} className="edit__icon" />
+			</div>
 		</div>
 	)
 }
