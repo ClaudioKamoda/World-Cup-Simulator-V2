@@ -8,7 +8,7 @@ The **_second phase_** is to have a world cup draw simulator as a tab in the app
 
 The **_third phase_** is to update the app because the format of the competiton is changing after the 2022 edition.
 
-The project will use React.Js in the frontend together with css modules to help with CSS.
+The project will use React.Js and Sass with Redux in the future.
 
 ## Available Scripts
 
