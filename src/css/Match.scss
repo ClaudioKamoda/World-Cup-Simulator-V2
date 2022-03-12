@@ -15,14 +15,6 @@
 	font-size: 1.125rem;
 	position: relative;
 
-	form {
-		input[type='text'] {
-			width: 30px;
-			font-size: 1.125rem;
-			text-align: center;
-		}
-	}
-
 	&__topText {
 		grid-area: stadium;
 		place-self: center;

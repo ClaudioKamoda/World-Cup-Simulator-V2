@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { images } from '../imageImports.js'
 import '../css/Match.scss'
 import FeatherIcon from 'feather-icons-react'
+import { ScoreInput } from './ScoreInput.js'
 
 export const Match = props => {
 	const [isEditing, setIsEditing] = useState(false)
 	const [buttonIcon, setButtonIcon] = useState('edit-3')
+
+	//TODO: transfer score state to ScoreInput component
 	const [scoreA, setScoreA] = useState(0)
 	const [scoreB, setScoreB] = useState(0)
 
@@ -27,10 +30,6 @@ export const Match = props => {
 		setScoreB(e.target.value)
 	}
 
-	const handleSubmit = e => {
-		e.preventDefault()
-	}
-
 	return (
 		<div className="match">
 			<div className="match__topText">
@@ -47,26 +46,20 @@ export const Match = props => {
 			<p className="match__teamA">{props.matchData.team_A}</p>
 			{!isEditing && <p className="match__scoreA">{scoreA}</p>}
 			{isEditing && (
-				<form className="match__scoreA" onSubmit={handleSubmit}>
-					<input
-						type="text"
-						value={scoreA}
-						onChange={handleScoreA}
-						maxlength="2"
-					/>
-				</form>
+				<ScoreInput
+					className="match__scoreA"
+					value={scoreA}
+					handle={handleScoreA}
+				/>
 			)}
 			<p className="match__cross">x</p>
 			{!isEditing && <p className="match__scoreB">{scoreB}</p>}
 			{isEditing && (
-				<form className="match__scoreB" onSubmit={handleSubmit}>
-					<input
-						type="text"
-						value={scoreB}
-						onChange={handleScoreB}
-						maxlength="2"
-					/>
-				</form>
+				<ScoreInput
+					className="match__scoreB"
+					value={scoreB}
+					handle={handleScoreB}
+				/>
 			)}
 			<p className="match__teamB">{props.matchData.team_B}</p>
 			<img
