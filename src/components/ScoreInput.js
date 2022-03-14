@@ -1,4 +1,4 @@
-import '../css/ScoreInput.scss'
+import '../css/styles/ScoreInput.scss'
 
 export const ScoreInput = props => {
 	const handleSubmit = e => {

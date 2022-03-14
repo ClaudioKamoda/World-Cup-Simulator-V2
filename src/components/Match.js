@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { images } from '../imageImports.js'
-import '../css/Match.scss'
+import '../css/stles/Match.scss'
 import FeatherIcon from 'feather-icons-react'
 import { ScoreInput } from './ScoreInput.js'
+import { useSelector } from 'react-redux'
 
 export const Match = props => {
 	const [isEditing, setIsEditing] = useState(false)
