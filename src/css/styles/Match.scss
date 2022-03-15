@@ -1,4 +1,4 @@
-@import './app.scss';
+@import '../main.scss';
 
 .match {
 	display: grid;
@@ -63,6 +63,7 @@
 		right: -15px;
 		top: 0;
 		background-color: $blue;
+		cursor: pointer;
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;

@@ -1,0 +1,8 @@
+@import '../main.scss';
+
+.matchList {
+	@include Flexbox($direction: column);
+	gap: 10px;
+	padding: 30px 50px;
+	height: 100vh;
+}

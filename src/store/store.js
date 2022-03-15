@@ -4,12 +4,14 @@ const INITIAL_STATE = {
 	currentGroup: 'A'
 }
 
-const groupReducer = (state = INITIAL_STATE, action) => {
-	if (action.type === 'changeCurrentGGroup') {
-		return INITIAL_STATE
+const mainReducer = (state = INITIAL_STATE, action) => {
+	if (action.type === 'changeCurrentGroup') {
+		return {
+			currentGroup: action.groupToChange
+		}
 	}
 }
 
-const store = createStore(groupReducer)
+const store = createStore(mainReducer)
 
 export default store
