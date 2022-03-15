@@ -1,0 +1,32 @@
+@import '../main.scss';
+
+.groupNav {
+	width: 130px;
+	height: 100vh;
+	background-color: white;
+	@include Flexbox();
+
+	ul {
+		@include Flexbox($direction: column);
+		gap: 5px;
+
+		li {
+			list-style: none;
+			font-size: 2.5rem;
+			font-weight: 600;
+			text-align: center;
+			border-radius: 8px;
+			width: 60px;
+			height: 60px;
+			color: white;
+			background-color: $blue;
+			cursor: pointer;
+			@include Flexbox();
+
+			&.active {
+				background-color: yellow;
+				color: black;
+			}
+		}
+	}
+}
