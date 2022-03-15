@@ -68,7 +68,7 @@
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
-		transition: top 0.3s ease-in;
+		transition: top 0.2s ease-out;
 		@include Flexbox();
 
 		&__icon {
@@ -77,7 +77,7 @@
 		}
 
 		&:hover {
-			top: -5px;
+			top: -10px;
 		}
 
 		&.bg-green {

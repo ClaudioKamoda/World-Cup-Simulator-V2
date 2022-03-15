@@ -10,6 +10,7 @@ const mainReducer = (state = INITIAL_STATE, action) => {
 			currentGroup: action.groupToChange
 		}
 	}
+	return state
 }
 
 const store = createStore(mainReducer)
