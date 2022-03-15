@@ -1,4 +1,4 @@
-import { Match } from './Match.js'
+import { Match } from './Match.jsx'
 import '../css/styles/MatchList.scss'
 
 export const MatchList = () => {

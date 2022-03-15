@@ -1,4 +1,4 @@
-import { MatchList } from './components/MatchList.js'
+import { MatchList } from './components/MatchList.jsx'
 
 export const App = () => {
 	return (
