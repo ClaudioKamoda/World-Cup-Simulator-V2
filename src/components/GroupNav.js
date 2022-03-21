@@ -16,7 +16,6 @@ export const GroupNav = () => {
 
 	const clickHandler = group => {
 		dispatcher({ type: 'changeCurrentGroup', groupToChange: group })
-		console.log(current)
 	}
 
 	return (
