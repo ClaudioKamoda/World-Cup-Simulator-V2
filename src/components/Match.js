@@ -3,16 +3,29 @@ import { images } from '../imageImports'
 import '../css/styles/Match.scss'
 import FeatherIcon from 'feather-icons-react'
 import { ScoreInput } from './ScoreInput'
+import { useDispatch, useSelector } from 'react-redux'
 
 export const Match = props => {
 	const [isEditing, setIsEditing] = useState(false)
 	const [buttonIcon, setButtonIcon] = useState('edit-3')
+	const matchDispatcher = useDispatch()
+	const currentGroup = useSelector(state => state.currentGroup)
 
 	//TODO: transfer score state to ScoreInput component
 	const [scoreA, setScoreA] = useState(0)
 	const [scoreB, setScoreB] = useState(0)
 
 	const toggleEdit = () => {
+		if (isEditing) {
+			matchDispatcher({
+				type: 'updateMatch',
+				group: currentGroup,
+				index: props.index,
+				score_A: scoreA,
+				score_B: scoreB
+			})
+		}
+
 		setIsEditing(prevState => {
 			return !prevState
 		})

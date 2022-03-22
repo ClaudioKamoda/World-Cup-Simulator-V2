@@ -226,10 +226,14 @@ const INITIAL_STATE = {
 
 const mainReducer = (state = INITIAL_STATE, action) => {
 	if (action.type === 'changeCurrentGroup') {
-		console.log('dispatched')
 		return {
 			...state,
 			currentGroup: action.groupToChange
+		}
+	}
+	if (action.type === 'updateMatch') {
+		return {
+			...state
 		}
 	}
 	return state

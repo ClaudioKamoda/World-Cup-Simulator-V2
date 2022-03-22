@@ -9,8 +9,8 @@ export const MatchList = () => {
 
 	return (
 		<section className="matchList">
-			{matchList.map(match => {
-				return <Match matchData={match} key={match.id} />
+			{matchList.map((match, index) => {
+				return <Match matchData={match} key={match.id} index={index} />
 			})}
 		</section>
 	)
