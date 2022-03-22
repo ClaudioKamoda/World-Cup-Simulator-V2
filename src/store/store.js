@@ -57,7 +57,7 @@ const INITIAL_STATE = {
 			],
 			matches: [
 				{
-					id: 1,
+					id: 'A1',
 					team_A: 'BRA',
 					score_A: 0,
 					team_B: 'GER',
@@ -66,7 +66,7 @@ const INITIAL_STATE = {
 					stadium: 'Education City'
 				},
 				{
-					id: 2,
+					id: 'A2',
 					team_A: 'FRA',
 					score_A: 0,
 					team_B: 'ARG',
@@ -75,7 +75,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 3,
+					id: 'A3',
 					team_A: 'FRA',
 					score_A: 0,
 					team_B: 'BRA',
@@ -84,7 +84,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 4,
+					id: 'A4',
 					team_A: 'GER',
 					score_A: 0,
 					team_B: 'ARG',
@@ -93,7 +93,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 5,
+					id: 'A5',
 					team_A: 'BRA',
 					score_A: 0,
 					team_B: 'ARG',
@@ -102,7 +102,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 6,
+					id: 'A6',
 					team_A: 'FRA',
 					score_A: 0,
 					team_B: 'GER',
@@ -166,7 +166,7 @@ const INITIAL_STATE = {
 			],
 			matches: [
 				{
-					id: 1,
+					id: 'B1',
 					team_A: 'ENG',
 					score_A: 0,
 					team_B: 'SKO',
@@ -175,7 +175,7 @@ const INITIAL_STATE = {
 					stadium: 'Education City'
 				},
 				{
-					id: 2,
+					id: 'B2',
 					team_A: 'DEN',
 					score_A: 0,
 					team_B: 'SPA',
@@ -184,7 +184,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 3,
+					id: 'B3',
 					team_A: 'SKO',
 					score_A: 0,
 					team_B: 'DEN',
@@ -193,7 +193,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 4,
+					id: 'B4',
 					team_A: 'SPA',
 					score_A: 0,
 					team_B: 'ENG',
@@ -202,7 +202,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 5,
+					id: 'B5',
 					team_A: 'SKO',
 					score_A: 0,
 					team_B: 'SPA',
@@ -211,7 +211,7 @@ const INITIAL_STATE = {
 					stadium: 'Ahmed bin Ali'
 				},
 				{
-					id: 6,
+					id: 'B6',
 					team_A: 'DEN',
 					score_A: 0,
 					team_B: 'ENG',

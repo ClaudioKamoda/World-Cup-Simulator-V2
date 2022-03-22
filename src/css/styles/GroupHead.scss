@@ -1,0 +1,40 @@
+@import '../main.scss';
+
+tr {
+	.groupName {
+		text-align: left;
+		width: 200px;
+		padding-left: 5px;
+	}
+
+	th {
+		position: relative;
+		.tooltip {
+			visibility: hidden;
+			width: 100px;
+			color: white;
+			background-color: black;
+			border-radius: 8px;
+			padding: 5px 10px;
+			position: absolute;
+			z-index: 1;
+			bottom: 120%;
+			right: -35px;
+			&::after {
+				content: ' ';
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				margin-left: -5px;
+				border-width: 5px;
+				border-style: solid;
+				border-color: black transparent transparent transparent;
+			}
+		}
+		&:hover {
+			.tooltip {
+				visibility: visible;
+			}
+		}
+	}
+}

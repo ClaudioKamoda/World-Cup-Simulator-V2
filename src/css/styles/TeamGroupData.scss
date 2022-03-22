@@ -1,0 +1,35 @@
+@import '../main.scss';
+
+tr {
+	td {
+		text-align: center;
+		width: 30px;
+	}
+
+	.teamName {
+		display: grid;
+		grid-template-columns: 20px 50px calc(100% - 70px);
+		width: 200px;
+		height: 60px;
+		//grid is also a table, so we have to reset the border
+		border: none;
+		border-bottom: 1px solid #ddd;
+		img {
+			width: 40px;
+			align-self: center;
+			justify-self: center;
+		}
+		p {
+			padding: 5px;
+			align-self: center;
+			justify-self: start;
+		}
+		.index {
+			justify-self: center;
+		}
+		&.lastIndex {
+			//another consequence of grid border
+			border: none;
+		}
+	}
+}
