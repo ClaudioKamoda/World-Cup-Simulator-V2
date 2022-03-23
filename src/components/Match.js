@@ -4,26 +4,28 @@ import '../css/styles/Match.scss'
 import FeatherIcon from 'feather-icons-react'
 import { ScoreInput } from './ScoreInput'
 import { useDispatch, useSelector } from 'react-redux'
+import { groupDataActions } from '../store/store'
 
 export const Match = props => {
 	const [isEditing, setIsEditing] = useState(false)
 	const [buttonIcon, setButtonIcon] = useState('edit-3')
 	const matchDispatcher = useDispatch()
-	const currentGroup = useSelector(state => state.currentGroup)
+	const currentGroup = useSelector(state => state.selectedGroup.currentGroup)
 
 	//TODO: transfer score state to ScoreInput component
-	const [scoreA, setScoreA] = useState(0)
-	const [scoreB, setScoreB] = useState(0)
+	const [scoreA, setScoreA] = useState(props.matchData.score_A)
+	const [scoreB, setScoreB] = useState(props.matchData.score_B)
 
 	const toggleEdit = () => {
 		if (isEditing) {
-			matchDispatcher({
-				type: 'updateMatch',
-				group: currentGroup,
-				index: props.index,
-				score_A: scoreA,
-				score_B: scoreB
-			})
+			matchDispatcher(
+				groupDataActions.updateMatch({
+					group: currentGroup,
+					index: props.index,
+					score_A: scoreA,
+					score_B: scoreB
+				})
+			)
 		}
 
 		setIsEditing(prevState => {

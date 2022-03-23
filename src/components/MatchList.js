@@ -3,8 +3,9 @@ import '../css/styles/MatchList.scss'
 import { useSelector } from 'react-redux'
 
 export const MatchList = () => {
+	const currentGroup = useSelector(state => state.selectedGroup.currentGroup)
 	const matchList = useSelector(
-		state => state.groups[state.currentGroup].matches
+		state => state.groupData.groups[currentGroup].matches
 	)
 
 	return (

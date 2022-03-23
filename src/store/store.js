@@ -1,7 +1,10 @@
-import { createStore } from 'redux'
+import { createSlice, configureStore } from '@reduxjs/toolkit'
 
-const INITIAL_STATE = {
-	currentGroup: 'A',
+const initialState = {
+	currentGroup: 'A'
+}
+
+const groupInitialState = {
 	groups: {
 		A: {
 			name: 'Group A',
@@ -224,21 +227,43 @@ const INITIAL_STATE = {
 	}
 }
 
-const mainReducer = (state = INITIAL_STATE, action) => {
-	if (action.type === 'changeCurrentGroup') {
-		return {
-			...state,
-			currentGroup: action.groupToChange
+const selectedGroupSlice = createSlice({
+	name: 'selectedGroup',
+	initialState,
+	reducers: {
+		changeCurrentGroup(state, action) {
+			state.currentGroup = action.payload
 		}
 	}
-	if (action.type === 'updateMatch') {
-		return {
-			...state
-		}
-	}
-	return state
-}
+})
 
-const store = createStore(mainReducer)
+const groupDataSlice = createSlice({
+	name: 'groupData',
+	initialState: groupInitialState,
+	reducers: {
+		updateMatch(state, action) {
+			state.groups[action.payload.group].matches[
+				action.payload.index
+			].score_A = action.payload.score_A
+
+			state.groups[action.payload.group].matches[
+				action.payload.index
+			].score_B = action.payload.score_B
+		},
+		updateGroup(state, action) {
+			state.groups[action.payload.group].teams = action.payload.teams
+		}
+	}
+})
+
+const store = configureStore({
+	reducer: {
+		selectedGroup: selectedGroupSlice.reducer,
+		groupData: groupDataSlice.reducer
+	}
+})
+
+export const selectedGroupActions = selectedGroupSlice.actions
+export const groupDataActions = groupDataSlice.actions
 
 export default store

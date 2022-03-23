@@ -1,12 +1,16 @@
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import '../css/styles/Group.scss'
 import { TeamGroupData } from './TeamGroupData'
 import { GroupHead } from './GroupHead'
+import { groupDataActions } from '../store/store'
 
 export const Group = () => {
-	const selectedGroup = useSelector(state => state.currentGroup)
-	const groupData = useSelector(state => state.groups[selectedGroup])
+	const selectedGroup = useSelector(state => state.selectedGroup.currentGroup)
+	const groupData = useSelector(
+		state => state.groupData.groups[selectedGroup]
+	)
+	const dispatcher = useDispatch()
 
 	function EvaluateGroup() {
 		const groupMap = new Map()
@@ -32,14 +36,14 @@ export const Group = () => {
 			const B = match.team_B
 
 			groupMap.get(A).matches_played += 1
-			groupMap.get(A).goals_forward += A.score
-			groupMap.get(A).goals_against += B.score
-			groupMap.get(A).goals_difference += A.score - B.score
+			groupMap.get(A).goals_forward += Number(match.score_A)
+			groupMap.get(A).goals_against += Number(match.score_B)
+			groupMap.get(A).goal_difference += match.score_A - match.score_B
 
 			groupMap.get(B).matches_played += 1
-			groupMap.get(B).goals_forward += B.score
-			groupMap.get(B).goals_against += A.score
-			groupMap.get(B).goals_difference += B.score - A.score
+			groupMap.get(B).goals_forward += Number(match.score_B)
+			groupMap.get(B).goals_against += Number(match.score_A)
+			groupMap.get(B).goal_difference += match.score_B - match.score_A
 
 			if (match.score_A > match.score_B) {
 				groupMap.get(A).points += 3
@@ -58,11 +62,31 @@ export const Group = () => {
 		})
 
 		//sort the group array
+		const unsorted = Array.from(groupMap.values())
+		const sortedTeams = unsorted.sort((a, b) => {
+			if (a.points > b.points) return -1
+			if (a.points < b.points) return 1
+
+			if (a.goal_difference > b.goal_difference) return -1
+			if (a.goal_difference < b.goal_difference) return 1
+
+			if (a.goals_forward > b.goals_forward) return -1
+			if (a.goals_forward < b.goals_forward) return 1
+
+			return 0
+		})
+
+		dispatcher(
+			groupDataActions.updateGroup({
+				group: selectedGroup,
+				teams: sortedTeams
+			})
+		)
 	}
 
 	useEffect(() => {
 		EvaluateGroup()
-	}, [groupData.matches])
+	}, [groupData.matches, EvaluateGroup])
 
 	return (
 		<table className="groupTable">

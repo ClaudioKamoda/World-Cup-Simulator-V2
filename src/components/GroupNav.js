@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
 import '../css/styles/GroupNav.scss'
+import { selectedGroupActions } from '../store/store'
 
 export const GroupNav = () => {
 	let groupList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 	const dispatcher = useDispatch()
-	const current = useSelector(state => state.currentGroup)
+	const current = useSelector(state => state.selectedGroup.currentGroup)
 
 	const isActive = group => {
 		if (group === current) {
@@ -16,7 +17,7 @@ export const GroupNav = () => {
 
 	const clickHandler = group => {
 		if (group !== current)
-			dispatcher({ type: 'changeCurrentGroup', groupToChange: group })
+			dispatcher(selectedGroupActions.changeCurrentGroup(group))
 	}
 
 	return (
