@@ -11,9 +11,9 @@ export const Group = () => {
 		state => state.groupData.groups[selectedGroup]
 	)
 	const dispatcher = useDispatch()
+	const groupMap = new Map()
 
 	function EvaluateGroup() {
-		const groupMap = new Map()
 		const reset = {
 			points: 0,
 			matches_played: 0,
@@ -86,7 +86,7 @@ export const Group = () => {
 
 	useEffect(() => {
 		EvaluateGroup()
-	}, [groupData.matches, EvaluateGroup])
+	}, [groupData.matches])
 
 	return (
 		<table className="groupTable">

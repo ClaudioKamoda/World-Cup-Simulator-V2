@@ -49,8 +49,17 @@ export const Match = props => {
 		<div className="match">
 			<div className="match__topText">
 				<p>
-					<span>{props.matchData.match_time}</span> -
-					<span> {props.matchData.stadium}</span>
+					<span>
+						{props.matchData.match_date.getDate() +
+							'/' +
+							(parseInt(props.matchData.match_date.getMonth()) +
+								1)}
+					</span>
+					{' | '}
+					<span>
+						{props.matchData.match_date.getHours() + ':00'}
+					</span>{' '}
+					-<span> {props.matchData.stadium}</span>
 				</p>
 			</div>
 			<img
