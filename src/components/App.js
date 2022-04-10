@@ -1,14 +1,21 @@
-import { MatchList } from './MatchList'
-import { GroupNav } from './GroupNav'
-import { Group } from './Group'
-import '../css/styles/App.scss'
+import { Route, Redirect } from 'react-router-dom'
+import { GroupStage } from './GroupStage'
+import { KnockoutRound } from './KnockoutRound'
+import { Navbar } from './Navbar'
 
 export const App = () => {
 	return (
-		<div className="App">
-			<GroupNav />
-			<Group />
-			<MatchList />
+		<div>
+			<Navbar />
+			<Route path="/" exact>
+				<Redirect to="/groupStage" />
+			</Route>
+			<Route path="/groupStage">
+				<GroupStage />
+			</Route>
+			<Route path="/knockoutRound">
+				<KnockoutRound />
+			</Route>
 		</div>
 	)
 }
