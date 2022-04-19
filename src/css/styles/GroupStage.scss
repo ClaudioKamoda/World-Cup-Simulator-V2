@@ -1,7 +1,7 @@
 @import '../main.scss';
 
 .GroupStage {
-	height: fit-content;
+	height: 90vh;
 	width: 100vw;
 	@include Flexbox($direction: row, $justify: space-between);
 }

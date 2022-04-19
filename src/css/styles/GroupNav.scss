@@ -2,7 +2,7 @@
 
 .groupNav {
 	width: 130px;
-	height: 100vh;
+	height: 100%;
 	background-color: white;
 	@include Flexbox();
 
@@ -18,14 +18,14 @@
 			border-radius: 8px;
 			width: 60px;
 			height: 60px;
-			color: white;
+			color: $white;
 			background-color: $blue;
 			cursor: pointer;
 			@include Flexbox();
 
 			&.active {
-				background-color: yellow;
-				color: black;
+				background-color: $yellow;
+				color: $black;
 			}
 
 			&:hover {

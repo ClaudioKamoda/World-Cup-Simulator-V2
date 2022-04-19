@@ -89,7 +89,7 @@ export const Group = () => {
 	}, [groupData.matches])
 
 	return (
-		<table className="groupTable">
+		<table>
 			<thead>
 				<GroupHead groupName={groupData.name} />
 			</thead>
