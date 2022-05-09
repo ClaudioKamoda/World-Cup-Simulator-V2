@@ -1,0 +1,23 @@
+@import '../main.scss';
+
+.matchKnockout{
+  background-color: $white;
+  border-radius: 8px;
+  @include Flexbox($direction: column);
+  gap: 5px;
+  margin: 10px;
+  z-index: 2;
+
+  &--team{
+    @include Flexbox();
+    gap: 10px;
+
+    &__img{
+      height: 35px;
+    }
+
+    p{
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import '../main.scss';
+
+.knockoutRound{
+  width: 95vw;
+  margin: 0 auto;
+  height: 90vh;
+  @include Flexbox();
+  
+  .matches{
+    height: 90%;
+    width: 100%;
+    //background-color: blue;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+      "oitavas1 oitavas1 . . . . . . . . oitavas5 oitavas5"
+      "oitavas1 oitavas1 quartas1 quartas1 . . . . quartas3 quartas3 oitavas5 oitavas5"
+      "oitavas2 oitavas2 quartas1 quartas1 . final final . quartas3 quartas3 oitavas6 oitavas6"
+      "oitavas2 oitavas2 . semiFinal1 semiFinal1 final final semiFinal2 semiFinal2 . oitavas6 oitavas6"
+      "oitavas3 oitavas3 . semiFinal1 semiFinal1 . . semiFinal2 semiFinal2 . oitavas7 oitavas7"
+      "oitavas3 oitavas3 quartas2 quartas2 . terceiro terceiro . quartas4 quartas4 oitavas7 oitavas7"
+      "oitavas4 oitavas4 quartas2 quartas2 . terceiro terceiro . quartas4 quartas4 oitavas8 oitavas8"
+      "oitavas4 oitavas4 . . . . . . . . oitavas8 oitavas8";
+  }
+
+  .oitavas1{
+    grid-area: oitavas1;
+  }
+  .oitavas2{
+    grid-area: oitavas2;
+  }
+  .oitavas3{
+    grid-area: oitavas3;
+  }
+  .oitavas4{
+    grid-area: oitavas4;
+  }
+  .oitavas5{
+    grid-area: oitavas5;
+  }
+  .oitavas6{
+    grid-area: oitavas6;
+  }
+  .oitavas7{
+    grid-area: oitavas7;
+  }
+  .oitavas8{
+    grid-area: oitavas8;
+  }
+
+  .quartas1{
+    grid-area: quartas1;
+  }
+  .quartas2{
+    grid-area: quartas2;
+  }
+  .quartas3{
+    grid-area: quartas3;
+  }
+  .quartas4{
+    grid-area: quartas4;
+  }
+
+  .semiFinal1{
+    grid-area: semiFinal1;
+  }
+  .semiFinal2{
+    grid-area: semiFinal2;
+  }
+
+  .terceiro{
+    grid-area: terceiro;
+  }
+
+  .final{
+    grid-area: final;
+  }
+
+  .connectLines{
+    border: 3px solid $black;
+    border-radius: 5px;
+  }
+
+  .borderArea1{
+    grid-area: 2 / 2 / 4 / 3;
+    border-left: none;
+  }
+
+  .borderArea2{
+    grid-area: 6 / 2 / 8 / 3;
+    border-left: none;
+  }
+
+  .borderArea3{
+    grid-area: 3 / 3 / 7 / 5;
+    border-left: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .borderArea4{
+    grid-area: 4 / 6 / 7 / 8;
+  }
+
+  .borderArea5{
+    grid-area: 5 / 5 / 6 / 6;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 0px;
+  }
+
+  .borderArea6{
+    grid-area: 5 / 8 / 6 / 9;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 0px;
+  }
+
+  .borderArea7{
+    grid-area: 2 / 11 / 4 / 12;
+    border-right: none;
+  }
+
+  .borderArea8{
+    grid-area: 6 / 11 / 8 / 12;
+    border-right: none;
+  }
+
+  .borderArea9{
+    grid-area: 3 / 9 / 7 / 11;
+    border-right: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}

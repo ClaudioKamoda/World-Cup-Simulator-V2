@@ -12,11 +12,15 @@
       gap: 15px;
 
       li{
-        text-decoration: none;
         background-color: $light-blue;
         border-radius: 5px;
         padding: 5px 20px;
         transition: 0.3s ease;
+        
+        a{
+          text-decoration: none;
+          color: $black;
+        }
 
         &:hover{
           background-color: $yellow;
