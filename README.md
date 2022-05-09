@@ -8,8 +8,10 @@ The **_first phase_** is to have a functional prototype with the current edition
 
 -   ✓ Refactor the code from the Vue codebase.
 -   ✓ Code the logic for changing the match result and instantly changing the group table.
--   Create a new component to handle the final stage of the tornament.
--   Integrate with React Router and create a navbar that allows user to change between group stage and final stage views.
+-   ✓ Create a new component to handle the final stage of the tornament.
+-   ✓ Integrate with React Router and create a navbar that allows user to change between group stage and final stage views.
+-   Integrate data to show the qualified teams rom group stage in the knockout rounds.
+-   Create Modal to edit Knockout Round matches.
 
 The **_second phase_** is to have a world cup draw simulator as a tab in the application.
 
@@ -41,10 +43,20 @@ You may also see any lint errors in the console.
 
 **Match.js** - Shows the match data and dispatches changes made by the user to the store.
 
+**MatchKnockout.js** - Shows matches from the Knockout Round.
+
 **MatchList.js** - Holds all the matches for a group.
+
+**Navbar.js** - Allow user to change views.
 
 ## Progress
 
-On March 23 this is the current state of the project:
+On March 23, this is the current state of the project:
 
-![Current state](https://github.com/ClaudioKamoda/World-Cup-Simulator-V2/blob/main/src/progressGifs/2022-03-23.gif)
+![Current state March 23](https://github.com/ClaudioKamoda/World-Cup-Simulator-V2/blob/main/src/progressGifs/2022-03-23.gif)
+
+On May 08, this is the current state of the project:
+
+-   Real data from the world cup has been added and Knockout Round has been designed.
+
+![Current state May 08](https://github.com/ClaudioKamoda/World-Cup-Simulator-V2/blob/main/src/progressGifs/2022-05-08.gif)
