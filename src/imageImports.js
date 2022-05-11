@@ -27,6 +27,7 @@ import QAT from './images/QAT.png'
 import SEN from './images/SEN.png'
 import SRB from './images/SRB.png'
 import SUI from './images/SUI.png'
+import TBD from './images/TBD.png'
 import TUN from './images/TUN.png'
 import UAE from './images/UAE.png'
 import UKR from './images/UKR.png'
@@ -63,6 +64,7 @@ export const images = {
 	SEN,
 	SRB,
 	SUI,
+	TBD,
 	TUN,
 	UAE,
 	UKR,

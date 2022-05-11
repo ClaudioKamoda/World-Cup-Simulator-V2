@@ -961,6 +961,87 @@ const groupInitialState = {
 	}
 }
 
+const knockoutInitialState = {
+	roundOf16: [
+		{
+			id: 'A1B2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'C1D2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'E1F2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'G1H2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'B1A2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'D1C2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'F1E2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		},
+		{
+			id: 'H1G2',
+			team_A: 'TBD',
+			score_A: 0,
+			team_B: 'TBD',
+			score_B: 0,
+			match_date: new Date('November 21, 2022 13:00:00 GMT+03:00'),
+			stadium: 'Al Thumama'
+		}
+	],
+	quarter: [],
+	semi: [],
+	third: {},
+	final: {}
+}
+
 const selectedGroupSlice = createSlice({
 	name: 'selectedGroup',
 	initialState,
@@ -990,14 +1071,24 @@ const groupDataSlice = createSlice({
 	}
 })
 
+const knockoutSlice = createSlice({
+	name: 'knockout',
+	initialState: knockoutInitialState,
+	reducers: {
+		blankMatchData(state, action) {}
+	}
+})
+
 const store = configureStore({
 	reducer: {
 		selectedGroup: selectedGroupSlice.reducer,
-		groupData: groupDataSlice.reducer
+		groupData: groupDataSlice.reducer,
+		knockout: knockoutSlice.reducer
 	}
 })
 
 export const selectedGroupActions = selectedGroupSlice.actions
 export const groupDataActions = groupDataSlice.actions
+export const knockoutActions = knockoutSlice.actions
 
 export default store

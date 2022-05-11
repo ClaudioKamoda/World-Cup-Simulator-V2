@@ -1,7 +1,13 @@
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import '../css/styles/KnockoutRound.scss'
 import { MatchKnockout } from './MatchKnockout'
 
 export const KnockoutRound = () => {
+	const currentGroup = useSelector(state => state.selectedGroup.currentGroup)
+	const groupData = useSelector(state => state.groupData.groups[currentGroup])
+
+	const knockoutMatches = useSelector(state => state.knockout)
 	let data = {
 		phase: 'Semi-final',
 		team_A: 'BRA',
@@ -9,6 +15,12 @@ export const KnockoutRound = () => {
 		team_B: 'FRA',
 		score_B: 0
 	}
+
+	function blankMatchData() {}
+
+	useEffect(() => {
+		blankMatchData()
+	}, [knockoutMatches.semi])
 
 	return (
 		<main className="knockoutRound">
